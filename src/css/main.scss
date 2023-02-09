@@ -2,8 +2,122 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    .content {
-        background-color: red;
+@layer base {
+    @font-face {
+        font-family: "HelveticaNeueThin";
+        src: url("../fonts/HelveticaNeueThin.ttf");
+    }
+
+    @font-face {
+        font-family: "HelveticaNeueLight";
+        src: url("../fonts/HelveticaNeueLight.ttf");
+    }
+    @font-face {
+        font-family: "HelveticaNeueRegular";
+        src: url("../fonts/HelveticaNeue.ttf");
+    }
+    @font-face {
+        font-family: "HelveticaNeueMedium";
+        src: url("../fonts/HelveticaNeueMedium.ttf");
+    }
+
+    @font-face {
+        font-family: "HelveticaNeueBold";
+        src: url("../fonts/HelveticaNeueBold.ttf");
+    }
+}
+
+@layer components {
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    li,
+    span,
+    a,
+    input,
+    select {
+        @apply font-thin;
+    }
+    .container {
+        @apply max-w-desktopW mx-auto;
+    }
+    h1 {
+        @apply text-6xl;
+        @media screen and (max-width: 1500px) {
+            @apply text-5xl;
+        }
+        @media screen and (max-width: 480px) {
+            @apply text-2.5xl;
+        }
+    }
+}
+.diizz-banner-content {
+    .diizz-banner-social {
+        margin-bottom: 20px;
+        li {
+            margin-right: 20px;
+            font-size: 20px;
+            &:hover {
+                @apply text-diizz-main;
+            }
+        }
+    }
+    h1 {
+        @apply text-diizz-white font-medium;
+        span {
+            position: relative;
+            @apply font-medium text-diizz-main;
+            &:before {
+                content: "";
+                width: 96%;
+                @apply bg-diizz-main;
+                height: 5px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transition: width 0.3s ease-out;
+                border-radius: 50px;
+                @media screen and (max-width: 480px) {
+                    height: 3px;
+                }
+            }
+        }
+    }
+}
+.diizz-home-banner-cta {
+    span {
+        &.text {
+            position: relative;
+            padding: 10px 0;
+            transition: color 0.3s ease-out;
+            &:before {
+                content: "";
+                width: 15%;
+                @apply bg-diizz-white;
+                height: 2px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transition: width 0.3s ease-out;
+                border-radius: 50xp;
+            }
+        }
+    }
+    &:hover {
+        .text {
+            @apply text-diizz-main;
+            &:before {
+                width: 100%;
+                @apply bg-diizz-main;
+            }
+        }
+        .icon {
+            bottom: -2px;
+            @apply text-diizz-main;
+        }
     }
 }
