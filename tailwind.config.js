@@ -49,9 +49,9 @@ module.exports = {
         '6xl': ['72px', '80px']
       },
       fontFamily: {
-        light: ["HelveticaNeueLight", "sans-serif"],
-        thin: ["HelveticaNeueThin", "sans-serif"],
-        regular: ["HelveticaNeueRegular", "sans-serif"],
+        regular: ["HelveticaNeueLight", "sans-serif"],
+        light: ["HelveticaNeueThin", "sans-serif"],
+        thin: ["HelveticaNeueRegular", "sans-serif"],
         medium: ["HelveticaNeueMedium", "sans-serif"],
         bold: ["HelveticaNeueBold", "sans-serif"],
       },

@@ -40,11 +40,12 @@
     a,
     input,
     select {
-        @apply font-thin;
+        @apply font-light;
     }
     .container {
         @apply max-w-desktopW mx-auto;
     }
+
     h1 {
         @apply text-6xl;
         @media screen and (max-width: 1500px) {
@@ -52,6 +53,78 @@
         }
         @media screen and (max-width: 480px) {
             @apply text-2.5xl;
+        }
+    }
+}
+.navbar{
+    padding-top: 20px;
+    .desktop-menu{
+        padding: 15px 20px;
+        position: relative;
+        overflow: hidden;
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 100%;
+            @apply bg-diizz-white;
+            border-radius: 50px;
+            width: 100%;
+            height: 100%;
+            transition: left .3s ease-out;
+        }
+        &:hover&::before{
+
+            left: 0;
+        }
+        li{
+            padding: 0 15px;
+            transition: color .3s ease-out;
+            a{
+                position: relative;
+                padding-bottom: 8px;
+                display: block;
+                padding: 0;
+                background-color: transparent;
+                transition: color .3s ease-out;
+                @apply font-regular;
+                &:before,&:after{
+                    content: '';
+                    position: absolute;
+                    width: 0%;
+                    height: 2px;
+                    bottom: -2px;
+                    @apply bg-diizz-main;
+
+                }
+                &:hover{
+                    @apply text-diizz-main;
+                }
+                &::before{
+                    left: 0;
+                }
+                &::after{
+                    right: 0;
+                    @apply bg-diizz-main;
+                    transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+                }
+                &:hover&:before{
+                    @apply bg-diizz-main;
+                    width: 100%;
+                    transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+                }
+                &:hover&::after{
+                    background: transparent;
+                    width: 100%;
+                    transition: 0s;
+                }
+            }
+        }
+        &:hover{
+            li{
+                @apply text-diizz-black;
+
+            }
         }
     }
 }
@@ -73,6 +146,7 @@
             @apply font-medium text-diizz-main;
             &:before {
                 content: "";
+
                 width: 96%;
                 @apply bg-diizz-main;
                 height: 5px;
@@ -111,6 +185,7 @@
         .text {
             @apply text-diizz-main;
             &:before {
+
                 width: 100%;
                 @apply bg-diizz-main;
             }
@@ -118,6 +193,44 @@
         .icon {
             bottom: -2px;
             @apply text-diizz-main;
+        }
+    }
+}
+.diizz-awards-container{
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(72,72,72,1) 100%);
+    .awards-photo-content{
+        h2{
+            @apply text-4xl font-medium text-diizz-white pb-[30px] ;
+            text-transform: uppercase;
+            span{
+                @apply font-medium;
+            }
+        }
+    }
+    .awards-block{
+        h3{
+            @apply text-diizz-white text-3xl font-medium;
+        }
+        h5{
+            @apply text-diizz-white text-2xl font-regular pt-[20px];
+        }
+        p{
+            @apply text-diizz-white;
+            span{
+                color: #6f6f6f;
+
+            }
+        }
+        &:hover{
+        
+            .content{
+                opacity: .1;
+                transition: opacity .3s ease-out;
+                &.active{
+                    opacity: 1;
+                }
+            }
+            
         }
     }
 }
